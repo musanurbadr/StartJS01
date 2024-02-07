@@ -1071,4 +1071,30 @@ let bic = "musa@ba.as musa@de.com bader@d.net ";
 let bic1 = /\w*@\w+.\w+/ig;
 console.log(bic.match(bic1));
 
+let txt = "the homwork # is # hurd";
+console.log(txt.replaceAll("#", "very"));
 
+document.getElementById("register").onabort = function (){
+  let bo = document.getElementById("phone").value;
+  let be = /\\d{5}\d{7}\d{9}/;
+  let validationd = be.test(bo);
+  if (validationd === false){
+    return false ;
+  }
+  return true;
+} 
+
+let url1 = 'elzero.org';
+let url2 = 'http://elzero.org';
+let url3 = 'https://elzero.org';
+let url4 = 'https://www.elzero.org';
+let url5 = 'https://www.elzero.org:8080/articles.php?id=100&cat=topics';
+
+let re = /(https?:\/\/)?(www.)?\w+.\w+\S+/ig;
+
+
+console.log(url1.match(re));
+console.log(url2.match(re));
+console.log(url3.match(re));
+console.log(url4.match(re));
+console.log(url5.match(re));
