@@ -1226,12 +1226,123 @@ Object.defineProperty (myAdmins,  "c" , {
   configurable : true, 
   value : 3 ,
 });
-myAdmins.c = 100 ;
+
 console.log(delete myAdmins.c);
 console.log(myAdmins);
 
 
-let dataNow = new Date();
-console.log(dataNow);
+let dateNow = new Date();
+let birthday = new Date("oct 15 , 6");
+let dateDiff = birthday - dateNow;
 
-console.log(Date.now())
+console.log(dateDiff);
+console.log(dateDiff / 1000 / 60 / 60 /24 / 360 );
+
+
+let date1e = new Date();
+console.log(date1e);
+
+console.log("#".repeat(66));
+
+date1e.setFullYear(10);
+console.log(date1e);
+
+// let start = new Date()
+// for (let i = 0 ; i < 10000 ; i++){
+//   document.write(`<div>${i}</div>`);
+// }
+
+// let and = new Date();
+
+// let bol = start - and ;
+
+// console.log(bol);
+
+
+function* genner(){
+  let index = 0 ;
+  while(true){
+    yield index++;
+  }
+
+}
+let generboll = genner ();
+
+console.log( generboll.next());
+console.log( generboll.next());
+console.log( generboll.next());
+console.log( generboll.next());
+console.log( generboll.next());
+console.log( generboll.next());
+
+let a = 10 ;
+let arr = [1,2,3,4];
+
+  function sayyou(){
+  return `somthing`; 
+}
+
+export {
+  a, arr , sayyou
+}
+
+const myjs  = '{"user" : "msua" , "Age ": 40 }';
+console.log(typeof myjs); 
+console.log(myjs);
+
+const myjs1 = JSON.parse(myjs);
+console.log(typeof myjs1); 
+console.log(myjs1);
+
+myjs1["user"] = "EM";
+myjs1["Age"] = 50;
+
+const myjs2 = JSON.stringify(myjs);
+console.log(typeof myjs);
+console.log(myjs);
+
+
+
+console.log("1");
+console.log("2");
+setTimeout(() => console.log("HO"), 3000);
+console.log("3");
+
+
+console.log("######");
+console.log("One");
+setTimeout(() =>{
+  console.log("Three");
+}, 0); 
+setTimeout(()=> {
+  console.log("Four");
+},0);
+console.log("Two");
+
+
+let myrbot = new XMLHttpRequest ();
+myrbot.open("GET" , " r");
+myrbot.send();
+console.log(myrbot);
+
+console.log("||||||||||||||||ßå")
+myrbot.onreg = function(){
+  console.log(myRes.readyState);
+  console.log(myRes.status);
+  if(this.readyState === 4 && this.status === 200){
+    let jsDate = JSON.parse(this.responseText);
+    // console.log(jsDate)
+    for (let i = 0 ; i < jsDate.length; i++){
+    let div = document.createElement("div");
+    let repoName = document.createTextNode(jsDate[i].full_name);
+    div.appendChild(repoName);
+    document.body.appendChild(div); 
+    }
+  }
+};
+
+function makeItRed (e){
+  e.target.style.color = "red";
+}
+let p = document.querySelector(".test");
+p.addEventListener("click" ,makeItRed);
