@@ -1282,9 +1282,7 @@ let arr = [1,2,3,4];
   return `somthing`; 
 }
 
-export {
-  a, arr , sayyou
-}
+
 
 const myjs  = '{"user" : "msua" , "Age ": 40 }';
 console.log(typeof myjs); 
@@ -1341,8 +1339,107 @@ myrbot.onreg = function(){
   }
 };
 
-function makeItRed (e){
+
+function makeItRed(e) {
   e.target.style.color = "red";
 }
-let p = document.querySelector(".test");
-p.addEventListener("click" ,makeItRed);
+
+let element = document.querySelector(".test");
+element.addEventListener("click", makeItRed);
+
+function imAc (){
+  console.log("Im goode bol ");
+}setTimeout(imAc , 2000);
+
+setTimeout(() => {
+  console.log("How are you doing ");
+  setTimeout(() => {
+    console.log("Im good , think of cqson , and");
+    setTimeout(() => {
+      console.log("im olso good ");
+      setTimeout(() => {
+        console.log("where are you doing todey ");
+        setTimeout(() => {
+          console.log("Im going to scool rigth now ");
+          setTimeout(() => {
+            console.log("NICE ");
+            setTimeout(() => {console.log("good loce ");},7000);
+          },1000);
+        },1000);
+      },1000);
+    },1000);
+  },1000);
+},1000);
+
+
+const myPromise = new Promise((rev , rej)=> {
+  let connect = true;
+  if (connect){
+    rev("connecte");
+  }else{
+    rej(Error("Connecte failde "))
+  }
+});
+console.log(myPromise);
+
+myPromise.then(
+  (resolveValue) => console.log(`Good ${resolveValue}`),
+  (rejectValue) => console.log(`Bad ${rejectValue}`)
+);
+
+
+const mychose = new Promise((rev1 , rej1)=> {
+  let myEmployees = ["msua" , "yusuf" , "sayd" , "node"];
+  if (myEmployees.length = 4){
+    rev1(myEmployees);
+  }else{
+    rej1(Error("non  "))
+  }
+});
+
+mychose.then((resolveValue) => {
+  resolveValue.length = 2 ;
+  return resolveValue;
+}) .then((resolveValue) => {
+  resolveValue.length = 1 ;
+  return resolveValue;
+}).then((resolveValue ) =>{
+  console.log (`The choosen is ${resolveValue}`)
+})
+.catch((reco ) => console.log(reco))
+.finally(console.log("the opakldfkdsf"));
+
+const mydol = new Promise(function(rws , jos) {
+  setTimeout (() => {
+    rws("Im goode promise ");
+  },1000);
+});
+console.log('@@@!@!@')
+const mydol1 = new Promise(function(rws , jos) {
+  setTimeout (() => {
+    rws("Im goode promise ");
+  },3000);
+});
+const mydol2 = new Promise(function(rws , jos) {
+  setTimeout (() => {
+    rws("Im goode promise ");
+  },2000);
+});
+
+Promise.all([mydol, mydol1 , mydol2 ]).then((resolveValue) => console.log(resolveValue));
+
+
+function gethot() {
+  return new Promise((res , hos ) =>{
+    let usears = ["musa"];
+    if(usears.length > 0 ){
+      res("user fond");
+    }else{
+      hos("NO entik");
+    }
+  });
+}
+gethot().then(
+  (resolveValue) => console.log(resolveValue),
+  (rejectValue) => console.log(rejectValue)  
+  );
