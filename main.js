@@ -1443,3 +1443,21 @@ gethot().then(
   (resolveValue) => console.log(resolveValue),
   (rejectValue) => console.log(rejectValue)  
   );
+
+  console.log("-----------------------------");
+
+  const Myprojak = new Promise((ho1 , ho2 ) => {
+    setTimeout(() => {
+      ho1("IM prette good ");
+    }, 20000);
+  });
+
+  async function readyState() {
+    console.log("Befor ");
+    
+    console.log(await Myprojak);
+    console.log("After ");
+
+  }
+
+  readyState();
